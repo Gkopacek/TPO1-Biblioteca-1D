@@ -15,6 +15,13 @@ namespace TPO1_Biblioteca
             this.libros = new List<Libro>();
         }
 
+        public Libro obtenerLibro(string nombreDelLibro)
+        {
+            Libro libro;
+            libro = buscarLibro(nombreDelLibro);
+            return libro;
+        }
+
         private Libro buscarLibro(string titulo)
         {
             Libro librobuscado = null;
