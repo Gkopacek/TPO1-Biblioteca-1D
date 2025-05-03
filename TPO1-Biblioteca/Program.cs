@@ -45,7 +45,7 @@ internal class Program
 
                     if (libroEncontrado != null)
                     {
-                        Console.WriteLine($"Se encontró el libro: Título - {libroEncontrado.getTitulo()}, Autor - {libroEncontrado.getAutor()}, Editorial - {libroEncontrado.getEditorial()}, Estado - {(libroEncontrado.prestado ? "PRESTADO":"Disponible")}");
+                        Console.WriteLine($"Se encontró el libro: Título - {libroEncontrado.getTitulo()}, Autor - {libroEncontrado.getAutor()}, Editorial - {libroEncontrado.getEditorial()}, Estado - {(libroEncontrado.prestado ? "PRESTADO":"DISPONIBLE")}");
                     }
                     else
                     {
