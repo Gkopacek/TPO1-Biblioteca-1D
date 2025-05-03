@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 using TPO1_Biblioteca;
 
 internal class Program
@@ -21,7 +20,6 @@ internal class Program
             Console.WriteLine("3. Borrar libro");
             Console.WriteLine("4. Listar libros");
             Console.WriteLine("5. Agregar lector");
-            Console.WriteLine("6. Prestar libro a lector");
             Console.WriteLine("0. Salir");
             Console.Write("\nIngrese el número de opción: ");
 
@@ -45,7 +43,7 @@ internal class Program
 
                     if (libroEncontrado != null)
                     {
-                        Console.WriteLine($"Se encontró el libro: Título - {libroEncontrado.getTitulo()}, Autor - {libroEncontrado.getAutor()}, Editorial - {libroEncontrado.getEditorial()}, Estado - {(libroEncontrado.prestado ? "PRESTADO":"Disponible")}");
+                        Console.WriteLine($"Se encontró el libro: Título - {libroEncontrado.getTitulo()}, Autor - {libroEncontrado.getAutor}, Editorial - {libroEncontrado.getEditorial}");
                     }
                     else
                     {
@@ -55,7 +53,6 @@ internal class Program
                     break;
 
                 case 2:
-                    { 
                     // AgregarLibro();
 
                     string titulo, autor, editorial;
@@ -81,7 +78,7 @@ internal class Program
                     }
 
                     break;
-                    }
+
                 case 3:
                     // BorrarLibro();
 
@@ -105,31 +102,17 @@ internal class Program
                     break;
 
                 case 5:
-                    {
                     Console.WriteLine("Ingrese el nombre del lector");
                     string nombre = Console.ReadLine();
                     Console.WriteLine("Ingrese el dni del lector");
                     string dni = Console.ReadLine();
-
+                    
                     Lector lectorNuevo = biblioteca.altaLector(nombre, dni);
-
+                    
                     if (lectorNuevo != null)
                         Console.WriteLine("Lector agregado con éxito.");
                     break;
-                    }
-                case 6:
-                    {
-                    Console.WriteLine("Ingrese el dni del lector");
-                    string dni = Console.ReadLine();
-                    Console.WriteLine("Ingrese el titulo del libro");
-                    string titulo = Console.ReadLine();
 
-                    string respuesta = biblioteca.prestarLibro(titulo, dni);
-
-                    if (respuesta != null)
-                        Console.WriteLine(respuesta);
-                    break;
-                    }
                 case 0:
                     encendido = false;
                     Console.WriteLine("Saliendo del programa...");

@@ -1,32 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TPO1_Biblioteca
-{
-    public class Lector
+{ 
+    internal class Lector
     {
-        public string nombre{ get; set; }
-        public string dni { get; set; }
+        private string nombre;
+        private string dni;
 
-        List<Libro> librosPrestados { get; set;}
-        
+        List<Libro> librosPrestados { get; set; }
 
-        public Lector (string nombre, string dni)
+        public Lector(string nombre, string dni)
         {
             this.nombre = nombre;
             this.dni = dni;
             librosPrestados = new List<Libro>();
         }
 
-        public bool TieneTresLibros(){ 
-            return librosPrestados.Count >= 3;
+        public string getNombre()
+        {
+            return this.nombre;
         }
 
-        public void prestarLibro(Libro libro) {
-            librosPrestados.Add(libro);
-    }
-    }
+        public void setNombre(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public string getDni()
+        {
+            return this.dni;
+        }
+
+        public void setDni(string dni)
+        {
+            this.dni = dni;
+        }
+
+
+        public bool TieneTresLibros()
+        {
+            return librosPrestados.Count >= 3;
+        }
+    }   
 }
+
