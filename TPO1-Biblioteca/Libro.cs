@@ -7,17 +7,19 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TPO1_Biblioteca
 {
-    internal class Libro
+    public class Libro
     {
         private string titulo;
         private string autor;
         private string editorial;
+        public bool prestado { get; set;}
 
         public Libro(string titulo, string autor, string editorial)
         {
             this.titulo = titulo;
             this.autor = autor;
             this.editorial = editorial;
+            this.prestado = false;
         }
 
         public string getTitulo()
@@ -37,7 +39,7 @@ namespace TPO1_Biblioteca
 
         public override string ToString()
         {
-            string info = $"Titulo: {this.getTitulo()}, Autor: {this.getAutor}, Editorial: ${this.getEditorial}";
+            string info = $"Titulo: {this.getTitulo()}, Autor: {this.getAutor()}, Editorial: {this.getEditorial()}, Prestado: {(this.prestado? "PRESTADO":"DISPONIBLE")}";
 
             return info;
         }
